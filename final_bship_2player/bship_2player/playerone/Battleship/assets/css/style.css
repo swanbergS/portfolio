@@ -1,0 +1,142 @@
+.gameplay{
+	background-image: url('../images/background1.jpg');
+	background-size: 1400px 800px;
+	font-family: "Chakra Petch", sans-serif;
+}
+.indexheader{
+	margin-left: 400px;
+	font-size: 27px;
+}
+.gameplayheader{
+	margin-left: 200px;
+}
+.username{
+	margin-left: 500px;
+	top: 14px;
+	position: absolute;
+}
+.funbutton{
+	margin-left: 1100px;
+	top: 3000px;
+	position: relative;
+}
+.topleft, .undertom, table, th, td, .hitdiv, .text, .header1, .messagediv, .username, .indexheader, .gameplayheader, .abovep2{
+	color: white;
+}
+.remote{
+	top: 525px;
+}
+.messagediv, .hitdiv, .tom, .undertom{
+	margin-left: 933px;
+}
+.messagediv{
+	top: 480px;
+}
+.hitdiv{
+	top: 425px;
+}
+.tom{
+	top: 540px;
+}
+.undertom{
+	top: 620px;
+}
+.topright{
+	position: absolute;
+	right: 16px;
+}
+.messagediv, .hitdiv, .tom, .undertom{
+	position: absolute;
+}
+.topleft, .topright{
+  	top: 8px;
+}
+.underimg{
+  	top: 100px;
+}
+.topleft, .underimg{
+	position: absolute;
+	left: 16px;
+}
+.index{
+	background-image: url('../images/index_background.jpg');
+	font-family: "Squada One",  sans-serif;
+	background-size: 1400px 800px;
+	font-size: 30px;
+}
+table {
+	border: 1px solid navy;
+	margin-left: 80px;
+	margin-right: auto;
+}
+.abovep2{
+	top: 80px;
+	margin-left: 930px;
+	position: absolute;
+}
+.p2_table{
+	border: 1px solid navy;
+	margin-left: 930px;
+	top: 120px;
+	position: absolute;
+}
+.p2_td{
+	width: 28px;
+	height: 10px;
+}
+.messagediv, .hitdiv, .text{
+	font-size: 20px;
+}
+.text, .header1{
+	text-align: center;
+}
+
+table td, th {
+	border: 1px solid navy;
+}
+td, th{
+	width: 68px;
+	height: 50px;
+}
+.allscores{
+	background-color: #124a4d;
+	font-size: 20px;
+	border: 1px solid white;
+	margin-left: 30px;
+	top: 20px;
+	position: absolute;
+}
+.submarine {
+	background-image: url('../images/submarine.jpg');
+}
+.battleship{
+	background-image: url('../images/battleship.jpg');
+}
+.cruiser{
+	background-image: url('../images/cruiser.jpg');
+}
+.destroyer{
+	background-image: url('../images/destroyer.jpg');
+}
+.vessel{
+	background-image: url('../images/vessel.jpg');
+}
+.submarine, .battleship, .cruiser, .destroyer, .vessel{
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size: 100%;
+	height: 30px;
+	width: 68px;
+}
+
+.missed {
+	background-color: #ff0000;
+}
+.hit {
+	background-color: green;
+}
+
+.table-width {
+	width: 500px;
+}
+

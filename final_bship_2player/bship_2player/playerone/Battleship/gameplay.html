@@ -1,0 +1,334 @@
+<!---Sophia Swanberg---!>
+<!---Battleship part 4? I lost count---!>
+<!---30 April 2021---!>
+<!---PLAYER 1 GAMEPLAY---!>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/css?family=Chakra Petch" rel="stylesheet">
+	<link href='assets/css/style.css' rel='stylesheet' type='text/css'>
+	<title>WAR OF THE SCIENTOLOGISTS</title>
+</head>
+<body class="gameplay">
+	<div>
+		<h1 class="gameplayheader"><i>BATTLESHIP</i></h1>
+		<h3 id="username" class="username">username</h3>
+	</div>
+	<!---Tom Cruise---!>
+	<div class="tom"><img src= "assets/images/the_enemy.jpg" width="75" height="75"></div>
+	<div class="undertom">The Enemy</div>
+	<!---hit count displayed here---!>
+	<div id="hitdiv" class = "hitdiv"></div>
+	<!---messages displayed here---!>
+	<div id="messagediv" class="messagediv"></div>
+	<!---reset button---!>
+	<button id="reset" class="topright">Reset!</button>
+	<!---playing board:---!>
+	<div>
+		 <table id="gametable" class="table">
+			<tr>
+				<th>#</th>
+				<th>A</th>
+				<th>B</th>
+				<th>C</th>
+				<th>D</th>
+				<th>E</th>
+				<th>F</th>
+				<th>G</th>
+				<th>H</th>
+				<th>I</th>
+				<th>J</th>
+				
+			</tr>
+			<tr>
+				<th>1</th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>2</th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>3</th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>4</th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>5</th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>6</th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>7</th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>8</th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>9</th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>10</th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+	<!---player 2's board:---!>
+	<p class="abovep2">Player 2's Board (Click your board to update!)</p>
+	<div>
+		 <table id="p2table" class="p2_table">
+			<tr>
+				<th class="p2_td">#</th>
+				<th class="p2_td">A</th>
+				<th class="p2_td">B</th>
+				<th class="p2_td">C</th>
+				<th class="p2_td">D</th>
+				<th class="p2_td">E</th>
+				<th class="p2_td">F</th>
+				<th class="p2_td">G</th>
+				<th class="p2_td">H</th>
+				<th class="p2_td">I</th>
+				<th class="p2_td">J</th>
+				
+			</tr>
+			<tr>
+				<th class="p2_td">1</th>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+			</tr>
+			<tr>
+				<th class="p2_td">2</th>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+			</tr>
+			<tr>
+				<th class="p2_td">3</th>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+			</tr>
+			<tr>
+				<th class="p2_td">4</th>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+			</tr>
+			<tr>
+				<th class="p2_td">5</th>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+			</tr>
+			<tr>
+				<th class="p2_td">6</th>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+			</tr>
+			<tr>
+				<th class="p2_td">7</th>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+			</tr>
+			<tr>
+				<th class="p2_td">8</th>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+			</tr>
+			<tr>
+				<th class="p2_td">9</th>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+			</tr>
+			<tr>
+				<th class="p2_td">10</th>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+				<td class="p2_td"></td>
+			</tr>
+		</table>
+	</div>
+	<!---javascript/jquery---!>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+	<script type="text/javascript"	src="assets/js/view.js"></script>
+	<script type="text/javascript"	src="assets/js/models.js"></script>
+	<script type="text/javascript"	src="assets/js/app.js"></script>
+	<script type="text/javascript"	src="assets/js/listeners.js"></script>
+</body>
+</html>
