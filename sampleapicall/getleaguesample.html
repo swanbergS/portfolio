@@ -1,0 +1,56 @@
+<!DOCTYPE hmtl>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <meta charset="utf-8">
+        <title>Sample - Call GetLeague</title>
+    </head>
+
+    <body>
+        <h2>League Request</h2>
+        <form>
+            <label for="LeagueID">League ID</label>
+            <input type="text" id="LeagueID"><br/>
+            <input id="GetLeagueBtn" type="button" value="GetLeague" onClick="GetLeague()">
+        </form>
+
+        <br/>
+        <br/>
+        <h2>Results</h2>
+        <div id="results"></div>
+
+
+        <script type="javacript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+            async function GetLeague()
+            {
+                var myid = document.getElementById("LeagueID").value;
+
+
+                //const myBody = "";
+                var url = new URL("https://csc494apimgmt.azure-api.net/league/");
+                url.searchParams.append("id", myid);
+
+                try
+                {
+                    response = await fetch(url,
+                        {
+                            method: 'GET',
+                            headers: {
+                                'Api-Version': 'v2',
+                                'Ocp-Apim-Subscription-Key': 'c7d04b42632847e4bd1a633c4e54a75d',
+                                accept: 'application/json'
+                            }                    
+                        });
+                    myJson = await response.json();
+                    document.getElementById("results").innerHTML = JSON.stringify(myJson);
+                }
+                catch(e)
+                {
+                    document.getElementById("results").innerHTML = e;
+                }
+            }
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE hmtl>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <meta charset="utf-8">
+        <title>Sample - Create League</title>
+    </head>
+
+    <body>
+        <h2>Create New League</h2>
+        <form>
+            <label for="LeagueName">League Name</label>
+            <input type="text" id="LeagueName"><br/>
+            <label for="LeagueOwner">League Owner</label>
+            <input type="text" id="LeagueOwner"><br/>
+            <label for="LeagueCapacity">Number of Teams</label>
+            <input type="text" id="LeagueCapacity"><br/>
+            <input id="CreateLeagueBtn" type="button" value="Create League" onClick="CreateLeague()">
+        </form>
+
+        <br/>
+        <br/>
+        <h2>Results</h2>
+        <div id="results"></div>
+
+
+        <script type="javacript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+            async function CreateLeague()
+            {
+                var leagueName = document.getElementById("LeagueName").value;
+                var leagueOwner = document.getElementById("LeagueOwner").value;
+                var leagueCapacity = parseInt(document.getElementById("LeagueCapacity").value);
+
+                const myBody = {
+                                'league': String(leagueName),
+                                'owner': String(leagueOwner),
+                                'capacity': leagueCapacity
+                               };
+                var url = new URL("https://csc494apimgmt.azure-api.net/league/");
+
+                try
+                {
+                    response = await fetch(url,
+                        {
+                            method: 'POST',
+                            headers: {
+                                'Api-Version': 'v2',
+                                'Ocp-Apim-Subscription-Key': 'c7d04b42632847e4bd1a633c4e54a75d',
+                            },
+                            body: JSON.stringify(myBody)            
+                        });
+                    myJson = await response.json();
+                    document.getElementById("results").innerHTML = JSON.stringify(myJson);
+                }
+                catch(e)
+                {
+                    document.getElementById("results").innerHTML = e;
+                }
+            }
+
+        </script>
+    </body>
+</html>
